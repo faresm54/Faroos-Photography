@@ -236,6 +236,7 @@ button{
 .home-section{
     min-height: 100vh;
     background-image: url('/images/faroosPhotography.jpeg');
+    background-image: url('./images/FaroosPhotography.jpeg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -639,7 +640,7 @@ button{
 .contact-section .contact-img .img-box{
     background-color: red;
     padding: 200px 0;
-    background-image: url('../images/sunsetPhotography2.png');
+    background-image: url('./images/sunsetPhotography2.png');
     background-size: cover;
     background-position: center;
 }
