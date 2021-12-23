@@ -263,22 +263,31 @@
                 <div class="row">
                     <div class="contact-form">
                         <form class="form" action="https://formsubmit.co/2bb0cab3bbd216302739336a282009e3" method="POST">
+                            <!--HoneyPot-->
+                            <input type="text" name="_honey" style="display: none;">
+
+                            <!--Disable Captcha-->
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <!--Contact Us Confirmation Success Page-->
+                            <input type="hidden" name="_next" value="success.html">
+
                             <div class="row">
                                 <div class="left input-group">
                                     <label>Name</label>
-                                    <input type="text" placeholder="Your Name Here"
+                                    <input type="text" name="Name" placeholder="Your Name Here"
                                     class="input-control">
                                 </div>
                                 <div class="left input-group">
                                     <label>Email or Phone</label>
-                                    <input type="text" placeholder="Your Email or Phone Number Here"
+                                    <input type="text" name="Email or Phone Number" placeholder="Your Email or Phone Number Here"
                                     class="input-control">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-group">
                                     <label>Message</label>
-                                    <textarea class="input-control" placeholder="Your Message Here"></textarea>
+                                    <textarea class="input-control" name="Message" placeholder="Your Message Here"></textarea>
                                 </div>
                             </div>
                             <div class="form-btn">
