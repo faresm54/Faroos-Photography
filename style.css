@@ -235,7 +235,6 @@ button{
 
 .home-section{
     min-height: 100vh;
-    background-image: url('/images/faroosPhotography.jpeg');
     background-image: url('./images/FaroosPhotography.jpeg');
     background-size: cover;
     background-position: center;
