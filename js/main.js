@@ -1,0 +1,105 @@
+
+
+let index = 0;
+const totalWorkItems = $(".work-item").length;
+
+$(document).ready(function () {
+
+
+    //Nav Toggle
+    $(".nav-toggle").click(function(){
+        $(".header .nav").slideToggle();
+    })
+
+
+    //Smooth Scroll
+    $("a").on('click', function(event) {
+
+
+        //Fixed Header
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 100){
+                $(".header").addClass("fixed");
+            } else {
+                $(".header").removeClass("fixed");
+            }
+        })
+
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+    
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+
+    //Set Light Box Max Height
+    const wHeight = $(window).height();
+    $(".lightbox-img").css("max-height", wHeight+"px");
+
+
+    //Light Box
+    $(".work-item-inner").click(function(){
+        index = $(this).parent(".work-item").index();
+        $(".lightbox").addClass("open");
+        lightboxSlideShow();
+    })
+
+    $(".lightbox .prev").click(function(){
+        if(index == 0){
+            index = totalWorkItems-1;
+        } else {
+            index--;
+        }
+        lightboxSlideShow();
+    })
+
+    $(".lightbox .next").click(function(){
+        if(index == totalWorkItems-1){
+            index = 0;
+        } else {
+            index++;
+        }
+        lightboxSlideShow();
+    })
+    
+    // Close Lightbox
+
+    $(".lightbox-close").click(function(){
+        $(".lightbox").removeClass("open");
+    })
+
+    //Close Light Box When Clicked Outside of img-box
+
+    $(".lightbox").click(function(){
+        if($(event.target).hasClass("lightbox")){
+            $(this).removeClass("open");
+        }
+    })
+
+})
+
+
+
+
+function lightboxSlideShow(){
+    const imgSrc = $(".work-item").eq(index).find("img").attr("data-large");
+    const category = $(".work-item").eq(index).find("h4").html();
+    $(".lightbox-img").attr("src",imgSrc);
+    $(".lightbox-category").html(category);
+    $(".lightbox-counter").html(totalWorkItems + "/" + (index+1));
+}
