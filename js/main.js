@@ -11,6 +11,12 @@ $(document).ready(function () {
         $(".header .nav").slideToggle();
     })
 
+    $(".header .nav a").click(function(){
+        if($(window).width() < 768){
+            $(".header .nav").slideToggle();
+        }
+    })
+
 
     //Smooth Scroll
     $("a").on('click', function(event) {
