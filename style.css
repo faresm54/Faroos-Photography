@@ -906,6 +906,7 @@ button{
         flex: 0 0 100%;
         max-width: 100%;
     }
+    .blog .blog-item,
     .work-section .work-item,
     .service-section .service-item{
         flex: 0 0 50%;
@@ -923,6 +924,7 @@ button{
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .blog .blog-item,
     .contact-section .contact-info .info-item,
     .contact-section .contact-form .form .input-group.left,
     .contact-section .contact-form .form .input-group.right,
